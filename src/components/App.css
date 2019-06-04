@@ -1,0 +1,33 @@
+.app {
+    background: linear-gradient(#EED7C3, #FFF8F1);
+    min-height: 100vh;
+    width: 100vw;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 400px;
+    height: 750px;
+    background: linear-gradient(#2C6685, #86B6D0);
+    /* border: 3px solid #1C4053; */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+.site-title {
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+    color: #F6F7F7;
+    font-weight: 200;
+    font-size: 1.68em;
+}
+
+.weather-card {
+    margin: 10px;
+    box-shadow: 3px 6px 12px -6px rgba(0,0,0,0.5);
+}

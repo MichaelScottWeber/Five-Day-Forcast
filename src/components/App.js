@@ -1,16 +1,17 @@
 import React from 'react';
 import axios from 'axios';
 import SearchBar from './SearchBar';
+import CityName from './CityName';
 import WeatherCard from './WeatherCard';
 import sunny from '../images/sunny.svg';
 import rain from '../images/rain.svg';
 import cloudy from '../images/cloudy.svg';
-import partlyCloudy from '../images/partly-cloudy.svg';
+import './App.css';
 
 class App extends React.Component {
     state = {
         city: '',
-        day1: '',
+        day1: 'Today',
         day2: '',
         day3: '',
         day4: '',
@@ -25,16 +26,11 @@ class App extends React.Component {
         temp3: '',
         temp4: '',
         temp5: '',
-        highTemp1: '',
-        highTemp2: '',
-        highTemp3: '',
-        highTemp4: '',
-        highTemp5: '',
-        lowTemp1: '',
-        lowTemp2: '',
-        lowTemp3: '',
-        lowTemp4: '',
-        lowTemp5: '',
+        humidity1: '',
+        humidity2: '',
+        humidity3: '',
+        humidity4: '',
+        humidity5: '',
     }
 
     kToF = (temp) => {
@@ -45,25 +41,25 @@ class App extends React.Component {
         const day = new Date(date);
         const dayNum = day.getDay();
         if (dayNum === 0) {
-            return 'Sun'
+            return 'Sunday'
         };
         if (dayNum === 1) {
-            return 'Mon';
+            return 'Monday';
         };
         if (dayNum === 2) {
-            return 'Tue';
+            return 'Tuesday';
         };
         if (dayNum === 3) {
-            return 'Wed';
+            return 'Wednesday';
         };
         if (dayNum === 4) {
-            return 'Thr';
+            return 'Thursday';
         };
         if (dayNum === 5) {
-            return 'Fri';
+            return 'Friday';
         };
         if (dayNum === 6) {
-            return 'Sat';
+            return 'Saturday';
         };
     }
 
@@ -108,67 +104,63 @@ class App extends React.Component {
             temp3: this.kToF(response.data.list[16].main.temp),
             temp4: this.kToF(response.data.list[24].main.temp),
             temp5: this.kToF(response.data.list[32].main.temp),
-            highTemp1: this.kToF(response.data.list[0].main.temp_max),
-            highTemp2: this.kToF(response.data.list[8].main.temp_max),
-            highTemp3: this.kToF(response.data.list[16].main.temp_max),
-            highTemp4: this.kToF(response.data.list[24].main.temp_max),
-            highTemp5: this.kToF(response.data.list[32].main.temp_max),
-            lowTemp1: this.kToF(response.data.list[0].main.temp_min),
-            lowTemp2: this.kToF(response.data.list[8].main.temp_min),
-            lowTemp3: this.kToF(response.data.list[16].main.temp_min),
-            lowTemp4: this.kToF(response.data.list[24].main.temp_min),
-            lowTemp5: this.kToF(response.data.list[32].main.temp_min),
+            humidity1: response.data.list[0].main.humidity,
+            humidity2: response.data.list[8].main.humidity,
+            humidity3: response.data.list[16].main.humidity,
+            humidity4: response.data.list[24].main.humidity,
+            humidity5: response.data.list[32].main.humidity,
         })
     }
 
     render() {
         return (
-            <div className="ui container">
-                <SearchBar onSubmit={this.onSearchSubmit} />
+            <div className="app">
+                <div className="container">
+                    <h1 className="site-title">5 Day Weather Forecast</h1>
+                    <SearchBar onSubmit={this.onSearchSubmit} />
 
-                <div className="ui segment">
-                    <h2 className="ui header">{this.state.city}</h2>
-                </div>
+                    <CityName 
+                        className="city-name"
+                        city={this.state.city} 
+                    />
 
-                <div className="ui centered card">
-                    <WeatherCard 
-                        day={this.state.day1}
-                        image={this.state.image1}
-                        temp={this.state.temp1}
-                        highTemp={this.state.highTemp1}
-                        lowTemp={this.state.lowTemp1}
-                    />
-                </div>
-
-                <div className="ui four cards">
-                    <WeatherCard 
-                        day={this.state.day2}
-                        image={this.state.image2}
-                        temp={this.state.temp2}
-                        // highTemp={this.state.highTemp2}
-                        // lowTemp={this.state.lowTemp2}
-                    />
-                    <WeatherCard 
-                        day={this.state.day3}
-                        image={this.state.image3}
-                        temp={this.state.temp3}
-                        // highTemp={this.state.highTemp3}
-                        // lowTemp={this.state.lowTemp3}
-                    />
-                    <WeatherCard 
-                        day={this.state.day4}
-                        image={this.state.image4}
-                        temp={this.state.temp4}
-                        // highTemp={this.state.highTemp4}
-                        // lowTemp={this.state.lowTemp4}
-                    />
-                    <WeatherCard 
-                        day={this.state.day5}
-                        image={this.state.image5}
-                        temp={this.state.temp5}
-                        // highTemp={this.state.highTemp5}
-                        // lowTemp={this.state.lowTemp5}
-                    />
+                    <div className="weather-card-group">
+                        <WeatherCard 
+                            className="weather-card today"
+                            day="Current Weather"
+                            image={this.state.image1}
+                            temp={this.state.temp1}
+                            humidity={this.state.humidity1}
+                        />
+                        <WeatherCard 
+                            className="weather-card"
+                            day={this.state.day2}
+                            image={this.state.image2}
+                            temp={this.state.temp2}
+                            humidity={this.state.humidity2}
+                        />
+                        <WeatherCard 
+                            className="weather-card"
+                            day={this.state.day3}
+                            image={this.state.image3}
+                            temp={this.state.temp3}
+                            humidity={this.state.humidity3}
+                        />
+                        <WeatherCard 
+                            className="weather-card"
+                            day={this.state.day4}
+                            image={this.state.image4}
+                            temp={this.state.temp4}
+                            humidity={this.state.humidity4}
+                        />
+                        <WeatherCard 
+                            className="weather-card"
+                            day={this.state.day5}
+                            image={this.state.image5}
+                            temp={this.state.temp5}
+                            humidity={this.state.humidity5}
+                        />
+                    </div>
                 </div>
             </div>
         )

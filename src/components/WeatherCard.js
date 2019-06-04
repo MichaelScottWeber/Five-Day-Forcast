@@ -2,21 +2,22 @@ import React from 'react';
 import './WeatherCard.css';
 
 const WeatherCard = (props) => {
-    return (
-        <div className="ui raised card">
-            <div className="content">
-                <h3 className="center aligned header">{props.day}</h3>
+    if (props.temp) {
+        return (
+            <div className="weather-card">
+                <div className="text-group">
+                    <h3 className="card-title">{props.day}</h3>
+                    <div className="data-group">
+                        <p className="temp">{props.temp}&deg;</p>
+                        <p className="humidity">{props.humidity}% humidity</p>
+                    </div>
+                </div>
+                <img className="weather-image" alt="weather" src={props.image} />
             </div>
-            <div className="center aligned image">
-                <img alt="weather image" src={props.image} />
-            </div>
-            <div className="center aligned content">
-                <h3 className="header">{props.temp}&deg;</h3>
-                <span>{props.highTemp}</span>
-                <span className="meta"> {props.lowTemp}</span>
-            </div>
-        </div>
-    )
+        )
+    } else {
+        return <div></div>;
+    }
 }
 
 export default WeatherCard;

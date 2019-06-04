@@ -1,4 +1,5 @@
 import React from 'react';
+import './SearchBar.css';
 
 class SearchBar extends React.Component {
     state = {location: ''}
@@ -14,16 +15,25 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-            <div className="ui segment">
-                <form onSubmit={this.onFormSubmit} className="ui form">
-                    <div className="field">
-                        <label>Enter Your Zip Code</label>
+            <div className="search-bar">
+                <form 
+                    className="form"
+                    onSubmit={this.onFormSubmit} 
+                >
+                    <div className="input-group">
                         <input 
+                            className="text-input"
                             type="text" 
                             value={this.state.location} 
                             onChange={this.onInputChange}
                         />
+                        <input 
+                            className="submit"
+                            type="submit" 
+                            value="Go" 
+                        />
                     </div>
+                    <label>Enter Your Zip Code - location will be approximate</label>
                 </form>
             </div>
         );
