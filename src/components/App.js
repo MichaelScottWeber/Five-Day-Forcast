@@ -3,6 +3,7 @@ import axios from 'axios';
 import SearchBar from './SearchBar';
 import CityName from './CityName';
 import WeatherCard from './WeatherCard';
+import Spinner from './Spinner';
 import sunny from '../images/sunny.svg';
 import rain from '../images/rain.svg';
 import cloudy from '../images/cloudy.svg';
@@ -124,43 +125,50 @@ class App extends React.Component {
                         city={this.state.city} 
                     />
 
-                    <div className="weather-card-group">
-                        <WeatherCard 
-                            className="weather-card today"
-                            day="Current Weather"
-                            image={this.state.image1}
-                            temp={this.state.temp1}
-                            humidity={this.state.humidity1}
-                        />
-                        <WeatherCard 
-                            className="weather-card"
-                            day={this.state.day2}
-                            image={this.state.image2}
-                            temp={this.state.temp2}
-                            humidity={this.state.humidity2}
-                        />
-                        <WeatherCard 
-                            className="weather-card"
-                            day={this.state.day3}
-                            image={this.state.image3}
-                            temp={this.state.temp3}
-                            humidity={this.state.humidity3}
-                        />
-                        <WeatherCard 
-                            className="weather-card"
-                            day={this.state.day4}
-                            image={this.state.image4}
-                            temp={this.state.temp4}
-                            humidity={this.state.humidity4}
-                        />
-                        <WeatherCard 
-                            className="weather-card"
-                            day={this.state.day5}
-                            image={this.state.image5}
-                            temp={this.state.temp5}
-                            humidity={this.state.humidity5}
-                        />
-                    </div>
+                    {this.state.city ? 
+
+                        <div className="weather-card-group">
+                            <WeatherCard 
+                                className="weather-card today"
+                                day="Current Weather"
+                                image={this.state.image1}
+                                temp={this.state.temp1}
+                                humidity={this.state.humidity1}
+                            />
+                            <WeatherCard 
+                                className="weather-card"
+                                day={this.state.day2}
+                                image={this.state.image2}
+                                temp={this.state.temp2}
+                                humidity={this.state.humidity2}
+                            />
+                            <WeatherCard 
+                                className="weather-card"
+                                day={this.state.day3}
+                                image={this.state.image3}
+                                temp={this.state.temp3}
+                                humidity={this.state.humidity3}
+                            />
+                            <WeatherCard 
+                                className="weather-card"
+                                day={this.state.day4}
+                                image={this.state.image4}
+                                temp={this.state.temp4}
+                                humidity={this.state.humidity4}
+                            />
+                            <WeatherCard 
+                                className="weather-card"
+                                day={this.state.day5}
+                                image={this.state.image5}
+                                temp={this.state.temp5}
+                                humidity={this.state.humidity5}
+                            />
+                        </div>
+                     : 
+                        <Spinner message="Waiting for location data" />
+                    }
+
+                    
                 </div>
             </div>
         )

@@ -18,6 +18,7 @@
     width: 280px;
     background-color: #F6F7F7;
     border: none;
+    border-bottom: 3px solid #D9A87D;
     border-radius: 10px 0 0 10px;
     color: #082728;
     height: 40px;
@@ -32,6 +33,7 @@
     width: 40px;
     background-color: #F6F7F7;
     border: none;
+    border-bottom: 3px solid #D9A87D;
     border-radius: 0 10px 10px 0;
     height: 40px;
     color: #082728;

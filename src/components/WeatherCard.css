@@ -12,6 +12,7 @@
     padding: 10px;
     box-sizing: border-box;
     border-radius: 5px;
+    border-bottom: 3px solid #D9A87D;
 }
 
 .card-title {

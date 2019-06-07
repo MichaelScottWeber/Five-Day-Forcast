@@ -1,0 +1,25 @@
+@keyframes spinning{
+    from {transform: rotate(0deg)}
+    to {transform: rotate(359deg)}
+}
+
+.spinner {
+    margin: 200px auto;
+}
+
+.spinner-animation {
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    border-top: solid #F6F7F7;
+    /* border-bottom: solid #EED7C3; */
+    border-bottom: solid #D9A87D;
+    border-width: 2px 0 2px 0;
+    animation: spinning 1s linear infinite;
+    margin: 20px auto;
+}
+p {
+    color: rgba(246, 247, 247, .7);
+    font-weight: 200;
+    font-size: .8em;
+}

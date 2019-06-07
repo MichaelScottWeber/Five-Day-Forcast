@@ -16,7 +16,7 @@ const WeatherCard = (props) => {
             </div>
         )
     } else {
-        return <div></div>;
+        return <div>No data available :(</div>;
     }
 }
 
