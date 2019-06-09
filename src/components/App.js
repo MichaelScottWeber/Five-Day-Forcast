@@ -66,6 +66,7 @@ class App extends React.Component {
 
     setWeatherImage = (weather) => {
         if (weather === 'Rain') {
+            document.body.style.background = "url('https://images.unsplash.com/photo-1517842187497-033b8b8cea1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80')"
             return rain;
         }
         if (weather === 'Clouds') {
@@ -114,6 +115,22 @@ class App extends React.Component {
     }
 
     render() {
+        document.body.style.background = "url('https://images.unsplash.com/photo-1530908295418-a12e326966ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80') no-repeat center";
+        document.body.style.backgroundSize = "cover";
+
+        console.log(this.state.image2)
+
+        if (this.state.image1 === '/static/media/rain.1f770b84.svg') {
+            document.body.style.background = "url('https://images.unsplash.com/photo-1525087740718-9e0f2c58c7ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80') no-repeat center";
+            document.body.style.backgroundSize = "cover";
+        } else if (this.state.image1 === '/static/media/cloudy.c75c6f02.svg') {
+            document.body.style.background = "url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=689&q=80') no-repeat center";
+            document.body.style.backgroundSize = "cover";
+        } else if (this.state.image1 === '/static/media/sunny.a42608eb.svg') {
+            document.body.style.background = "url('https://images.unsplash.com/photo-1521125664120-ad7e7918efd0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80') no-repeat center";
+            document.body.style.backgroundSize = "cover";
+        }
+
         return (
             <div className="app">
                 <div className="container">
