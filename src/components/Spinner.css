@@ -11,11 +11,10 @@
     border-radius: 100px;
     width: 40px;
     height: 40px;
-    border-top: solid #F6F7F7;
-    /* border-bottom: solid #EED7C3; */
-    border-bottom: solid #D9A87D;
-    border-width: 2px 0 2px 0;
-    animation: spinning 1s linear infinite;
+    border: solid #F6F7F7;
+    /* border-bottom: solid #D9A87D; */
+    border-width: 3px 0 3px 0;
+    animation: spinning 1.5s linear infinite;
     margin: 20px auto;
 }
 p {

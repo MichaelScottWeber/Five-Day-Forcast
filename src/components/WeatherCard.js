@@ -1,18 +1,33 @@
 import React from 'react';
+import {Spring} from 'react-spring/renderprops';
 import './WeatherCard.css';
 
-const WeatherCard = (props) => {
-    if (props.temp) {
+const WeatherCard = ({ temp, displayToggle, onCardSelect, num, day, image }) => {
+    if (temp) {
         return (
-            <div className="weather-card">
-                <div className="text-group">
-                    <h3 className="card-title">{props.day}</h3>
-                    <div className="data-group">
-                        <p className="temp">{props.temp}&deg;</p>
-                        <p className="humidity">{props.humidity}% humidity</p>
-                    </div>
-                </div>
-                <img className="weather-image" alt="weather" src={props.image} />
+            <div 
+                className="weather-card" 
+                onClick={() => {
+                    displayToggle();
+                    onCardSelect(num)
+                }}
+            >
+                <Spring
+                    from={{ opacity: 0 }}
+                    to={{ opacity: 1 }}
+                >
+                    {props => (
+                        <div style={props}>
+                            <div className="fade-container">
+                                <h3 className="card-title">{day}</h3>
+                                <div className="data-group">
+                                    <p className="temp">{temp}&deg;</p>
+                                </div>
+                                <img className="weather-image" alt="weather" src={image} />
+                            </div>
+                        </div>
+                    )}
+                </Spring>
             </div>
         )
     } else {

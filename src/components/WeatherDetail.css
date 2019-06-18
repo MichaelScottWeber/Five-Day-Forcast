@@ -1,0 +1,83 @@
+.weather-detail {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    background-image: linear-gradient(#F6F7F7 80%, #D6DDDD);
+    border-radius: 5px;
+    border-bottom: 3px solid #D9A87D;
+    box-shadow: 3px 6px 12px -6px rgba(0,0,0,0.5);
+    margin: 10px;
+    width: 320px;
+    height: 490px;
+    justify-items: center;
+    align-items: center;
+}
+
+.day {
+    font-size: 1.7em;
+    font-weight: 100;
+    color: #082728;
+    margin: 0;
+    text-align: center;
+}
+
+.temperature {
+    font-size: 2.2em;
+    color: #082728;
+    margin: 0;
+    text-align: center;
+}
+
+.description {
+    color: #082728;
+    font-weight: 400;
+    font-size: 1.3em;
+    color: #082728;
+    margin: 0;
+    border-bottom: 1px solid #BEC4C4;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+.rain {
+    color: #576768;
+    font-weight: 400;
+    margin: 0;
+    font-size: 1em;
+}
+
+.wind {
+    color: #576768;
+    font-weight: 400;
+    margin: 0;
+    font-size: 1em;
+}
+
+.humidity {
+    color: #576768;
+    font-weight: 400;
+    margin: 0;
+    font-size: 1em;
+}
+
+.back-button {
+    color: #082728;
+    margin: 0;
+    text-align: center;
+    font-size: 1.2em;
+    transition: .2s;
+}
+
+.back-button:focus, .back-button:hover {
+    color: #589EC3;
+    cursor: pointer;
+}
+
+.underline {
+    border-bottom: 1px solid #BEC4C4;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
