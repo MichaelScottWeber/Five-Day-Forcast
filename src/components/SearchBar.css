@@ -38,6 +38,7 @@
     height: 40px;
     color: #082728;
     transition: .2s;
+    text-align: center;
 }
 
 .submit:focus {

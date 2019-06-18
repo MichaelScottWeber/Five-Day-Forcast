@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import moment from 'moment';
 import SearchBar from './SearchBar';
 import CityName from './CityName';
 import WeatherDisplay from './WeatherDisplay';
@@ -105,30 +106,34 @@ class App extends React.Component {
         }
     }
 
+    // dayOfWeek = (date) => {
+    //     const day = new Date(date);
+    //     const dayNum = day.getDay();
+    //     if (dayNum === 0) {
+    //         return 'Sunday'
+    //     };
+    //     if (dayNum === 1) {
+    //         return 'Monday';
+    //     };
+    //     if (dayNum === 2) {
+    //         return 'Tuesday';
+    //     };
+    //     if (dayNum === 3) {
+    //         return 'Wednesday';
+    //     };
+    //     if (dayNum === 4) {
+    //         return 'Thursday';
+    //     };
+    //     if (dayNum === 5) {
+    //         return 'Friday';
+    //     };
+    //     if (dayNum === 6) {
+    //         return 'Saturday';
+    //     };
+    // }
+
     dayOfWeek = (date) => {
-        const day = new Date(date);
-        const dayNum = day.getDay();
-        if (dayNum === 0) {
-            return 'Sunday'
-        };
-        if (dayNum === 1) {
-            return 'Monday';
-        };
-        if (dayNum === 2) {
-            return 'Tuesday';
-        };
-        if (dayNum === 3) {
-            return 'Wednesday';
-        };
-        if (dayNum === 4) {
-            return 'Thursday';
-        };
-        if (dayNum === 5) {
-            return 'Friday';
-        };
-        if (dayNum === 6) {
-            return 'Saturday';
-        };
+        return moment(date).format('dddd');
     }
 
     setWeatherImage = (weather) => {
@@ -222,6 +227,8 @@ class App extends React.Component {
             document.body.style.background = "url('https://images.unsplash.com/photo-1521125664120-ad7e7918efd0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80') no-repeat center";
             document.body.style.backgroundSize = "cover";
         }
+
+        console.log(moment().format('dddd'));
 
         return (
             <div className="app">
