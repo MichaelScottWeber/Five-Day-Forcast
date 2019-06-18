@@ -20,6 +20,7 @@ class WeatherDisplay extends React.Component {
                     {props => (
                         <div style={props}>
                             <div className="weather-card-group">
+                                <p className="card-label">Click on a day for more info</p>
                                 <WeatherCard 
                                     className="weather-card today"
                                     displayToggle={this.props.displayToggle}
