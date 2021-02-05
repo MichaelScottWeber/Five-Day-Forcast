@@ -106,38 +106,12 @@ class App extends React.Component {
         }
     }
 
-    // dayOfWeek = (date) => {
-    //     const day = new Date(date);
-    //     const dayNum = day.getDay();
-    //     if (dayNum === 0) {
-    //         return 'Sunday'
-    //     };
-    //     if (dayNum === 1) {
-    //         return 'Monday';
-    //     };
-    //     if (dayNum === 2) {
-    //         return 'Tuesday';
-    //     };
-    //     if (dayNum === 3) {
-    //         return 'Wednesday';
-    //     };
-    //     if (dayNum === 4) {
-    //         return 'Thursday';
-    //     };
-    //     if (dayNum === 5) {
-    //         return 'Friday';
-    //     };
-    //     if (dayNum === 6) {
-    //         return 'Saturday';
-    //     };
-    // }
-
     dayOfWeek = (date) => {
         return moment(date).format('dddd');
     }
 
     setWeatherImage = (weather) => {
-        if (weather === 'Rain') {
+        if (weather === 'Rain' || weather === 'Snow') {
             return rain;
         }
         if (weather === 'Clouds') {
