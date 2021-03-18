@@ -43,9 +43,9 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS Flex and Grid
 - [React](https://reactjs.org/) - JS library
-- [Axios] (https://axios-http.com/) - HTTP client
-- [react-spring] (https://www.react-spring.io/) - Animation library
-- [Open Weather Map] (https://openweathermap.org/) - Weather forecast API
+- [Axios](https://axios-http.com/) - HTTP client
+- [react-spring](https://www.react-spring.io/) - Animation library
+- [Open Weather Map](https://openweathermap.org/) - Weather forecast API
 
 ### What I learned
 
